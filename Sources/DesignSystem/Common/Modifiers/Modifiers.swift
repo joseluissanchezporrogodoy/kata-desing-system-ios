@@ -1,6 +1,6 @@
 //
 //  File.swift
-//  
+//
 //
 //  Created by JLSANCHEZP on 11/8/24.
 //
@@ -25,5 +25,34 @@ struct PTextModifier: ViewModifier {
 extension Text {
     func pTextStyle() -> some View {
         self.modifier(PTextModifier())
+    }
+}
+
+public struct DSAlertModifier: ViewModifier {
+    @Binding var showAlert: Bool
+    let dsAlertView: DSAlert
+    
+    public func body(content: Content) -> some View {
+            ZStack {
+                content
+                
+                if showAlert {
+                    VStack {
+                        Spacer()
+                        dsAlertView
+                            .frame(maxWidth: .infinity)
+                            .background(Color.white)
+                            .transition(.move(edge: .bottom))
+                            .animation(.easeInOut, value: showAlert)
+                    }
+                }
+            }
+        }
+}
+
+
+extension View {
+    public func showDSAlert(showAlert: Binding<Bool>, alertView: DSAlert) -> some View {
+        self.modifier(DSAlertModifier(showAlert: showAlert, dsAlertView: alertView))
     }
 }
