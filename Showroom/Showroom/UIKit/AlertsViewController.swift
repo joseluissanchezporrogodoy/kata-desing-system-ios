@@ -2,21 +2,38 @@ import UIKit
 import DesignSystem
 
 class AlertsViewController: UIViewController {
-    
-    private let actionButton: UIButton = UIButton(type: .system)
-    private let actionButton1: UIButton = UIButton(type: .system)
-    
+
+    private var actionButton: UIDSButton!
+    private var actionButton1: UIDSButton!
+
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        
+        setupButtons() // Llama al método para configurar los botones
+    }
+
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        
+        setupButtons() // Llama al método para configurar los botones
+    }
+
+    private func setupButtons() {
+        actionButton = UIDSButton(frame: .zero, message: "Show Alert", style: .primary) { [weak self] in
+            self?.buttonPressed()
+        }
+        
+        actionButton1 = UIDSButton(frame: .zero, message: "Show Alert1", style: .alternative) { [weak self] in
+            self?.button1Pressed()
+        }
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        
-        actionButton.setTitle("Show Alert", for: .normal)
+
         actionButton.translatesAutoresizingMaskIntoConstraints = false
-        actionButton.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
-        
-        actionButton1.setTitle("Show Alert1", for: .normal)
         actionButton1.translatesAutoresizingMaskIntoConstraints = false
-        actionButton1.addTarget(self, action: #selector(button1Pressed), for: .touchUpInside)
         
         view.addSubview(actionButton)
         view.addSubview(actionButton1)
@@ -29,7 +46,7 @@ class AlertsViewController: UIViewController {
             actionButton1.topAnchor.constraint(equalTo: actionButton.bottomAnchor, constant: 20)
         ])
     }
-    
+
     @objc private func buttonPressed() {
         print("Button was pressed!")
         
@@ -46,7 +63,7 @@ class AlertsViewController: UIViewController {
         )
         self.showAlertshow(title: "Hola Mundo", style: .error, alertInfo: alertInfo)
     }
-    
+
     @objc private func button1Pressed() {
         print("Button1 was pressed!")
         
