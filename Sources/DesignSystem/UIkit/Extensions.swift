@@ -22,6 +22,13 @@ import UIKit
         }
     }
     
+    @nonobjc func showRecicledAlertshow(title: String, style: AlertStyle, alertInfo: ODSAlertInformation) {
+        DispatchQueue.main.async {
+            guard let topController =  UIViewController.currentTopController() else { return }
+            UIDSAlertReuseSwifUIClass.show(title: title, style: style, alertInfo: alertInfo, controller: topController)
+        }
+    }
+    
     static func currentTopController() -> UIViewController? {
         let topController = UIViewController.topMostController()
         return topController

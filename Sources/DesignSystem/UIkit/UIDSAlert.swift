@@ -118,7 +118,6 @@ public extension UIDSAlert {
         
         // Configuración de la posición y tamaño de la alerta
         alert.translatesAutoresizingMaskIntoConstraints = false
-        controller.view.addSubview(alert)
         
         // Agregar constraints para centrar la alerta en la vista
         NSLayoutConstraint.activate([
