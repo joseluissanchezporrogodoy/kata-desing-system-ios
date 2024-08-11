@@ -54,17 +54,24 @@ struct DSAlertView: View {
                     icon
                         .foregroundColor(style.backgroundColor)
                         .padding(12)
+                        .accessibilityLabel(style.iconAccessibilityLabel)
+                        .accessibilityHidden(false)
                 }
                 Text(style.title + message)
                     .foregroundColor(style.textColor)
                     .pTextStyle()
+                    .accessibilityLabel("\(style.title) \(message)")
+                    .accessibilityHint("Alert message")
                 Spacer()
                 Button(action: {
                     alertInfo.dismissAction?()
                 }) {
                     Image("Cross", bundle: .module)
                         .padding(.trailing,12)
+                        
                 }
+                .accessibilityLabel("Dismiss Alert")
+                .accessibilityAddTraits(.isButton)
             }
             .padding(.horizontal,12)
         }
@@ -75,6 +82,14 @@ struct DSAlertView: View {
             alertInfo.first?.action()
         }
         .onLongPressGesture {
+            alertInfo.second?.action()
+        }
+        .accessibilityElement(children: .combine)
+        .accessibilityAddTraits(.isModal) // For VoiceOver
+        .accessibilityAction(named: "Perform Tap action") {
+            alertInfo.first?.action()
+        }
+        .accessibilityAction(named: "Perform LongPress action") {
             alertInfo.second?.action()
         }
     }
@@ -97,5 +112,6 @@ struct DSAlertView_Previews: PreviewProvider {
             )
         )
         .previewLayout(.sizeThatFits)
+        .environment(\.sizeCategory, .accessibilityExtraExtraExtraLarge)
     }
 }

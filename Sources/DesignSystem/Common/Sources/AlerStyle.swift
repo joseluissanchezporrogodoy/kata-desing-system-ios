@@ -50,6 +50,8 @@ enum AlertStyle {
         switch self {
         case .error:
              Image("Error", bundle: .module)
+                
+            
         case .success:
              Image("Success", bundle: .module)
         case .info:
@@ -76,6 +78,18 @@ enum AlertStyle {
              Color("SuccessText", bundle: .module)
         case .info:
              Color("NotificationText", bundle: .module)
+        }
+    }
+}
+extension AlertStyle {
+    var iconAccessibilityLabel: String {
+        switch self {
+        case .error:
+            return "Error Icon"
+        case .success:
+            return "Success Icon"
+        case .info:
+            return "Notification Icon"
         }
     }
 }
