@@ -7,7 +7,40 @@
 
 import SwiftUI
 
-
+/// A custom view that displays an alert with a message, icon, and customizable style.
+///
+/// The `DSAlertView` struct is a SwiftUI view that presents an alert with a message,
+/// optional icon, and customizable visual style. The alert also includes actions for
+/// tapping, long-pressing, and dismissing the view.
+///
+/// - Parameters:
+///   - message: The text message to be displayed in the alert.
+///   - style: The visual style of the alert, defining the title, icon, text color, and background color.
+///   - showIcon: A Boolean value indicating whether to show an icon in the alert.
+///   - alertInfo: An `ODSAlertInformation` object that contains actions for different gestures and dismissing the alert.
+///
+/// - Returns: A view that displays an alert with the specified properties.
+///
+/// - Example:
+/// ```swift
+/// DSAlertView(
+///     message: "This is an alert!",
+///     style: .error,
+///     showIcon: true,
+///     alertInfo: ODSAlertInformation(
+///         first: ActionInformation(action: {
+///             print("First action triggered")
+///         }),
+///         second: ActionInformation(action: {
+///             print("Second action triggered")
+///         }),
+///         dismissAction: {
+///             print("Dismiss action triggered")
+///         }
+///     )
+/// )
+/// ```
+/// This example demonstrates how to create a `DSAlertView` with a warning style, an icon, and actions for tap, long press, and dismissal.
 struct DSAlertView: View {
     let message: String
     let style: AlertStyle

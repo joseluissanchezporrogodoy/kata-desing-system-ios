@@ -6,7 +6,30 @@
 //
 
 import SwiftUI
-
+/// An enumeration that defines different styles of alerts.
+///
+/// The `AlertStyle` enum represents various alert types with associated properties such as background color, icon, title, and text color. Each case provides a specific visual appearance for an alert.
+///
+/// - Cases:
+///   - error: Represents an error alert style with an associated error icon, red background, and error title.
+///   - success: Represents a success alert style with an associated success icon, green background, and success title.
+///   - info: Represents an informational alert style with an associated bell icon, blue background, and informational title.
+///
+/// - Properties:
+///   - backgroundColor: The background color associated with the alert style.
+///   - icon: The icon image associated with the alert style. This may return `nil` if no icon is specified for a particular style.
+///   - title: The title text associated with the alert style, which is prepended to the alert message.
+///   - textColor: The text color used for the alert message and title.
+///
+/// - Example:
+/// ```swift
+/// let alertStyle = AlertStyle.error
+/// let backgroundColor = alertStyle.backgroundColor // Retrieves the background color for the error style.
+/// let icon = alertStyle.icon // Retrieves the icon for the error style.
+/// let title = alertStyle.title // Retrieves the title for the error style.
+/// let textColor = alertStyle.textColor // Retrieves the text color for the error style.
+/// ```
+/// This example shows how to access the properties of the `AlertStyle` enum for an error alert.
 enum AlertStyle {
     case error
     case success
