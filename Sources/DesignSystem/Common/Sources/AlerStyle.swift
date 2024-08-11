@@ -46,16 +46,14 @@ public enum AlertStyle {
         }
     }
     
-    var icon: Image? {
+    var icon: UIImage? {
         switch self {
         case .error:
-             Image("Error", bundle: .module)
-                
-            
+            return UIImage(named: "Error", in: .module, with: nil)
         case .success:
-             Image("Success", bundle: .module)
+            return UIImage(named: "Success", in: .module, with: nil)
         case .info:
-             Image("Bell", bundle: .module)
+            return UIImage(named: "Bell", in: .module, with: nil)
         }
     }
     
@@ -79,6 +77,27 @@ public enum AlertStyle {
         case .info:
              Color("NotificationText", bundle: .module)
         }
+    }
+    var backgroundColorUK: UIColor {
+            switch self {
+            case .error:
+                return UIColor(named: "Error", in: .module, compatibleWith: nil) ?? .red
+            case .success:
+                return UIColor(named: "Success", in: .module, compatibleWith: nil) ?? .green
+            case .info:
+                return UIColor(named: "Notification", in: .module, compatibleWith: nil) ?? .blue
+            }
+    }
+    
+    var textColorUK: UIColor {
+            switch self {
+            case .error:
+                return UIColor(named: "ErrorText", in: .module, compatibleWith: nil) ?? .white
+            case .success:
+                return UIColor(named: "SuccessText", in: .module, compatibleWith: nil) ?? .white
+            case .info:
+                return UIColor(named: "NotificationText", in: .module, compatibleWith: nil) ?? .white
+            }
     }
 }
 extension AlertStyle {

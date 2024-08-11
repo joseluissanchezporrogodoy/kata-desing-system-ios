@@ -58,7 +58,7 @@ public struct DSAlert: View {
         HStack {
             HStack {
                 if showIcon, let icon = style.icon {
-                    icon
+                    Image(uiImage: icon)
                         .foregroundColor(style.backgroundColor)
                         .padding(12)
                         .accessibilityLabel(style.iconAccessibilityLabel)
@@ -108,7 +108,7 @@ struct DSAlertView_Previews: PreviewProvider {
     static var previews: some View {
         DSAlert(
             message: "Success Message",
-            style: .success,
+            style: .error,
             showIcon: true,
             alertInfo: ODSAlertInformation(
                 first: ActionInformation(action: {
