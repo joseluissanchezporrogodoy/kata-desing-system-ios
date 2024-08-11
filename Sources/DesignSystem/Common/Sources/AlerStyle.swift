@@ -15,22 +15,44 @@ enum AlertStyle {
     var backgroundColor: Color {
         switch self {
         case .error:
-            return Color("Error", bundle: .module)
+             Color("Error", bundle: .module)
         case .success:
-            return Color("Success", bundle: .module)
+             Color("Success", bundle: .module)
         case .info:
-            return Color("Notification", bundle: .module)
+             Color("Notification", bundle: .module)
         }
     }
     
     var icon: Image? {
         switch self {
         case .error:
-            return Image("Error", bundle: .module)
+             Image("Error", bundle: .module)
         case .success:
-            return Image("Success", bundle: .module)
+             Image("Success", bundle: .module)
         case .info:
-            return Image("Bell", bundle: .module)
+             Image("Bell", bundle: .module)
+        }
+    }
+    
+    var title: String {
+        switch self {
+        case .error:
+            "Error: "
+        case .success:
+            "Success: "
+        case .info:
+            "Notification: "
+        }
+    }
+    
+    var textColor: Color {
+        switch self {
+        case .error:
+             Color("ErrorText", bundle: .module)
+        case .success:
+             Color("SuccessText", bundle: .module)
+        case .info:
+             Color("NotificationText", bundle: .module)
         }
     }
 }
