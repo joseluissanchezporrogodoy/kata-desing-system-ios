@@ -8,22 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		25010C072A17726E00D6AD98 /* ShowroomApp+UIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25010C062A17726E00D6AD98 /* ShowroomApp+UIKit.swift */; };
-		25010C0B2A17726F00D6AD98 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25010C0A2A17726F00D6AD98 /* Assets.xcassets */; };
-		25010C0E2A17726F00D6AD98 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25010C0D2A17726F00D6AD98 /* Preview Assets.xcassets */; };
-		253580BB2AD5E3E9001AB906 /* ShowroomApp+SwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E504602AD43B7000A1DAC5 /* ShowroomApp+SwiftUI.swift */; };
-		253580BC2AD5EE02001AB906 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25010C0A2A17726F00D6AD98 /* Assets.xcassets */; };
 		25E504672AD4400800A1DAC5 /* DesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = 25E504662AD4400800A1DAC5 /* DesignSystem */; };
 		25EE2AC22A1773C900E54FED /* DesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = 25EE2AC12A1773C900E54FED /* DesignSystem */; };
+		ED7C2E292C675CDC00CCB59F /* AlertsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7C2E282C675CDC00CCB59F /* AlertsViewController.swift */; };
+		ED9845B92C675E5000DC69FA /* ShowroomApp+SwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9845B82C675E5000DC69FA /* ShowroomApp+SwiftUI.swift */; };
+		ED9845BD2C675F1C00DC69FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED9845BA2C675F1C00DC69FA /* Assets.xcassets */; };
+		ED9845BE2C675F1C00DC69FA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED9845BB2C675F1C00DC69FA /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		25010C032A17726E00D6AD98 /* Showroom-UIKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Showroom-UIKit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		25010C062A17726E00D6AD98 /* ShowroomApp+UIKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShowroomApp+UIKit.swift"; sourceTree = "<group>"; };
-		25010C0A2A17726F00D6AD98 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		25010C0D2A17726F00D6AD98 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		2588596C2A1A575500D5A740 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = Info.plist; path = Showroom/Info.plist; sourceTree = "<group>"; };
 		25E504522AD43B2900A1DAC5 /* Showroom-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Showroom-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		25E504602AD43B7000A1DAC5 /* ShowroomApp+SwiftUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "ShowroomApp+SwiftUI.swift"; path = "showroom/ShowroomApp+SwiftUI.swift"; sourceTree = SOURCE_ROOT; };
+		ED7C2E282C675CDC00CCB59F /* AlertsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertsViewController.swift; sourceTree = "<group>"; };
+		ED9845B82C675E5000DC69FA /* ShowroomApp+SwiftUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ShowroomApp+SwiftUI.swift"; sourceTree = "<group>"; };
+		ED9845BA2C675F1C00DC69FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		ED9845BB2C675F1C00DC69FA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		ED9845BF2C675F2D00DC69FA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,7 +50,6 @@
 		25010BFA2A17726E00D6AD98 = {
 			isa = PBXGroup;
 			children = (
-				2588596C2A1A575500D5A740 /* Info.plist */,
 				25010C052A17726E00D6AD98 /* Showroom */,
 				25010C042A17726E00D6AD98 /* Products */,
 				25EE2AC02A1773C900E54FED /* Frameworks */,
@@ -68,38 +68,22 @@
 		25010C052A17726E00D6AD98 /* Showroom */ = {
 			isa = PBXGroup;
 			children = (
-				25010C062A17726E00D6AD98 /* ShowroomApp+UIKit.swift */,
-				25E504602AD43B7000A1DAC5 /* ShowroomApp+SwiftUI.swift */,
-				25E504482AD43AF200A1DAC5 /* SwiftUI */,
+				ED9845BA2C675F1C00DC69FA /* Assets.xcassets */,
+				ED7C2E2A2C675D6400CCB59F /* SwiftUI */,
 				25E504462AD43AF200A1DAC5 /* UIKit */,
-				25010C0A2A17726F00D6AD98 /* Assets.xcassets */,
-				25010C0C2A17726F00D6AD98 /* Preview Content */,
 			);
 			path = Showroom;
-			sourceTree = "<group>";
-		};
-		25010C0C2A17726F00D6AD98 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				25010C0D2A17726F00D6AD98 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		25E504462AD43AF200A1DAC5 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				ED9845BF2C675F2D00DC69FA /* Info.plist */,
+				25010C062A17726E00D6AD98 /* ShowroomApp+UIKit.swift */,
+				ED7C2E282C675CDC00CCB59F /* AlertsViewController.swift */,
 			);
 			name = UIKit;
 			path = Showroom/UIKit;
-			sourceTree = SOURCE_ROOT;
-		};
-		25E504482AD43AF200A1DAC5 /* SwiftUI */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = SwiftUI;
-			path = Showroom/SwiftUI;
 			sourceTree = SOURCE_ROOT;
 		};
 		25EE2AC02A1773C900E54FED /* Frameworks */ = {
@@ -107,6 +91,23 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		ED7C2E2A2C675D6400CCB59F /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				ED9845B82C675E5000DC69FA /* ShowroomApp+SwiftUI.swift */,
+				ED9845BC2C675F1C00DC69FA /* Preview Content */,
+			);
+			path = SwiftUI;
+			sourceTree = "<group>";
+		};
+		ED9845BC2C675F1C00DC69FA /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				ED9845BB2C675F1C00DC69FA /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,6 +169,7 @@
 					};
 					25E504512AD43B2900A1DAC5 = {
 						CreatedOnToolsVersion = 14.1;
+						LastSwiftMigration = 1540;
 					};
 				};
 			};
@@ -195,8 +197,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				25010C0E2A17726F00D6AD98 /* Preview Assets.xcassets in Resources */,
-				25010C0B2A17726F00D6AD98 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,7 +204,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				253580BC2AD5EE02001AB906 /* Assets.xcassets in Resources */,
+				ED9845BE2C675F1C00DC69FA /* Preview Assets.xcassets in Resources */,
+				ED9845BD2C675F1C00DC69FA /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,6 +217,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				25010C072A17726E00D6AD98 /* ShowroomApp+UIKit.swift in Sources */,
+				ED7C2E292C675CDC00CCB59F /* AlertsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,7 +225,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				253580BB2AD5E3E9001AB906 /* ShowroomApp+SwiftUI.swift in Sources */,
+				ED9845B92C675E5000DC69FA /* ShowroomApp+SwiftUI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,12 +361,12 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Showroom/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 4HR4T4KMX7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Showroom/Info.plist;
+				INFOPLIST_FILE = Showroom/UIKit/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Showroom;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -395,12 +397,12 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Showroom/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 4HR4T4KMX7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Showroom/Info.plist;
+				INFOPLIST_FILE = Showroom/UIKit/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Showroom;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -428,10 +430,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Showroom/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Showroom/SwiftUI/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 4HR4T4KMX7;
 				ENABLE_PREVIEWS = YES;
@@ -453,6 +456,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "match Development com.lidl.eci.lidl.plus.scrm.dev";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -463,10 +467,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Showroom/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Showroom/SwiftUI/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 4HR4T4KMX7;
 				ENABLE_PREVIEWS = YES;
