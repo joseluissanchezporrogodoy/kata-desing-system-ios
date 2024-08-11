@@ -6,9 +6,9 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            Button("Show Alert") {
+            DSButton(title: "Primary", state: .enabled, style: .primary, action: {
                 showAlert = true
-            }
+            })
         }
         .showDSAlert(showAlert: $showAlert, alertView: DSAlert(
             message: "Success Message",
