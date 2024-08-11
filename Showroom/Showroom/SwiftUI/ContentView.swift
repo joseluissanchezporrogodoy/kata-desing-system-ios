@@ -6,10 +6,32 @@
 //
 
 import SwiftUI
-
+import DesignSystem
+// Usage example
 struct ContentView: View {
+    @State private var showAlert = false
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Button("Show Alert") {
+                showAlert = true
+            }
+        }
+        .showDSAlert(showAlert: $showAlert, alertView: DSAlert(
+            message: "Success Message",
+            style: .success,
+            showIcon: true,
+            alertInfo: ODSAlertInformation(
+                first: ActionInformation(action: {
+                    print("Button 1 Action triggered")
+                }),
+                second: nil,
+                dismissAction: {
+                    print("Dismiss action triggered")
+                    showAlert = false
+                }
+            )
+        ))
     }
 }
 

@@ -10,6 +10,7 @@
 		25010C072A17726E00D6AD98 /* ShowroomApp+UIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25010C062A17726E00D6AD98 /* ShowroomApp+UIKit.swift */; };
 		25E504672AD4400800A1DAC5 /* DesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = 25E504662AD4400800A1DAC5 /* DesignSystem */; };
 		25EE2AC22A1773C900E54FED /* DesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = 25EE2AC12A1773C900E54FED /* DesignSystem */; };
+		ED223E042C69181C003F5528 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED223E032C69181C003F5528 /* ContentView.swift */; };
 		ED7C2E292C675CDC00CCB59F /* AlertsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7C2E282C675CDC00CCB59F /* AlertsViewController.swift */; };
 		ED9845B92C675E5000DC69FA /* ShowroomApp+SwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9845B82C675E5000DC69FA /* ShowroomApp+SwiftUI.swift */; };
 		ED9845BD2C675F1C00DC69FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED9845BA2C675F1C00DC69FA /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 		25010C032A17726E00D6AD98 /* Showroom-UIKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Showroom-UIKit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		25010C062A17726E00D6AD98 /* ShowroomApp+UIKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShowroomApp+UIKit.swift"; sourceTree = "<group>"; };
 		25E504522AD43B2900A1DAC5 /* Showroom-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Showroom-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED223E032C69181C003F5528 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		ED7C2E282C675CDC00CCB59F /* AlertsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertsViewController.swift; sourceTree = "<group>"; };
 		ED9845B82C675E5000DC69FA /* ShowroomApp+SwiftUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ShowroomApp+SwiftUI.swift"; sourceTree = "<group>"; };
 		ED9845BA2C675F1C00DC69FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				ED9845B82C675E5000DC69FA /* ShowroomApp+SwiftUI.swift */,
+				ED223E032C69181C003F5528 /* ContentView.swift */,
 				ED9845BC2C675F1C00DC69FA /* Preview Content */,
 			);
 			path = SwiftUI;
@@ -225,6 +228,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED223E042C69181C003F5528 /* ContentView.swift in Sources */,
 				ED9845B92C675E5000DC69FA /* ShowroomApp+SwiftUI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
