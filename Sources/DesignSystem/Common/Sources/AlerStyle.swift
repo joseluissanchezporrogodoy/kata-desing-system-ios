@@ -30,7 +30,7 @@ import SwiftUI
 /// let textColor = alertStyle.textColor // Retrieves the text color for the error style.
 /// ```
 /// This example shows how to access the properties of the `AlertStyle` enum for an error alert.
-enum AlertStyle {
+public enum AlertStyle {
     case error
     case success
     case info

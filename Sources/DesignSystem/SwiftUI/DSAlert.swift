@@ -1,6 +1,6 @@
 //
 //  File.swift
-//  
+//
 //
 //  Created by JLSANCHEZP on 11/8/24.
 //
@@ -41,13 +41,20 @@ import SwiftUI
 /// )
 /// ```
 /// This example demonstrates how to create a `DSAlertView` with a warning style, an icon, and actions for tap, long press, and dismissal.
-struct DSAlertView: View {
+public struct DSAlert: View {
     let message: String
     let style: AlertStyle
     let showIcon: Bool
     let alertInfo: ODSAlertInformation
     
-    var body: some View {
+    public init(message: String, style: AlertStyle, showIcon: Bool, alertInfo: ODSAlertInformation) {
+        self.message = message
+        self.style = style
+        self.showIcon = showIcon
+        self.alertInfo = alertInfo
+    }
+    
+    public var body: some View {
         HStack {
             HStack {
                 if showIcon, let icon = style.icon {
@@ -69,8 +76,8 @@ struct DSAlertView: View {
                 }) {
                     Image("Cross", bundle: .module)
                         .padding(12)
-
-                        
+                    
+                    
                 }
                 .accessibilityLabel("Dismiss Alert")
                 .accessibilityAddTraits(.isButton)
@@ -99,7 +106,7 @@ struct DSAlertView: View {
 
 struct DSAlertView_Previews: PreviewProvider {
     static var previews: some View {
-        DSAlertView(
+        DSAlert(
             message: "Success Message",
             style: .success,
             showIcon: true,
