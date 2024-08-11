@@ -62,12 +62,14 @@ struct DSAlertView: View {
                     .pTextStyle()
                     .accessibilityLabel("\(style.title) \(message)")
                     .accessibilityHint("Alert message")
+                    .padding(2)
                 Spacer()
                 Button(action: {
                     alertInfo.dismissAction?()
                 }) {
                     Image("Cross", bundle: .module)
-                        .padding(.trailing,12)
+                        .padding(12)
+
                         
                 }
                 .accessibilityLabel("Dismiss Alert")
@@ -98,7 +100,7 @@ struct DSAlertView: View {
 struct DSAlertView_Previews: PreviewProvider {
     static var previews: some View {
         DSAlertView(
-            message: "Error Message",
+            message: "Success Message",
             style: .success,
             showIcon: true,
             alertInfo: ODSAlertInformation(
@@ -112,6 +114,5 @@ struct DSAlertView_Previews: PreviewProvider {
             )
         )
         .previewLayout(.sizeThatFits)
-        .environment(\.sizeCategory, .accessibilityExtraExtraExtraLarge)
     }
 }
