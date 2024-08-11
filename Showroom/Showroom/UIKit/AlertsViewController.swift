@@ -3,12 +3,24 @@ import DesignSystem
 
 class AlertsViewController: UIViewController {
     private var alert: UIDSAlert?
-
+    private let actionButton: UIButton = UIButton(type: .system)
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-
-        // Configurando la información de la alerta con las acciones
+        actionButton.setTitle("Show Alert", for: .normal)
+        actionButton.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(actionButton)
+        
+        NSLayoutConstraint.activate([
+            actionButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            actionButton.topAnchor.constraint(equalTo: alert?.bottomAnchor ?? view.centerYAnchor, constant: 20)
+        ])
+        
+        actionButton.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
+    }
+    @objc private func buttonPressed() {
+           print("Button was pressed!")
+           // Aquí puedes agregar cualquier acción adicional que desees
         let alertInfo = ODSAlertInformation(
             first: ActionInformation(action: {
                 print("Tap action triggered")
@@ -20,28 +32,6 @@ class AlertsViewController: UIViewController {
                 print("Dismiss action triggered")
             }
         )
-
-        // Crear una instancia de UIDSAlert
-        alert = UIDSAlert(
-            title: "This is an alert!",
-            style: .error,
-            showIcon: true,
-            alertInfo: alertInfo
-        )
-
-        if let alert = alert {
-            // Configuración de la posición y tamaño de la alerta
-            alert.translatesAutoresizingMaskIntoConstraints = false
-            view.addSubview(alert)
-
-            // Agregar constraints para centrar la alerta en la vista
-            NSLayoutConstraint.activate([
-                alert.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-                alert.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-                alert.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-                alert.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
-                alert.heightAnchor.constraint(equalToConstant: 48) // Agregamos una altura mínima
-            ])
-        }
-    }
+        self.showAlertshow(title: "Hola Mundio", style: .error, alertInfo: alertInfo)
+       }
 }
