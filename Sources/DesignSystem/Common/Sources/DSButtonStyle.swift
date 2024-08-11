@@ -1,11 +1,11 @@
 import SwiftUI
 
-enum DSButtonState {
+public enum DSButtonState {
     case enabled
     case disabled
 }
 
-enum DSButtonStyle {
+public enum DSButtonStyle {
     case primary
     case secondary
     case alternative

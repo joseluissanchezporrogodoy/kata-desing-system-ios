@@ -1,12 +1,20 @@
 import SwiftUI
 
-struct DSButton: View {
+public struct DSButton: View {
+    
     let title: String
-    let action: () -> Void
     var state: DSButtonState = .enabled
     var style: DSButtonStyle = .primary
+    let action: () -> Void
     
-    var body: some View {
+    public init(title: String, state: DSButtonState = .enabled, style: DSButtonStyle = .primary, action: @escaping () -> Void) {
+        self.title = title
+        self.state = state
+        self.style = style
+        self.action = action
+    }
+    
+    public var body: some View {
         Button(action: {
             if state == .enabled {
                 action()
@@ -51,17 +59,17 @@ struct DSButton: View {
 
 #Preview {
     VStack(spacing: 20) {
-        DSButton(title: "Primary", action: {
+        DSButton(title: "Primary", state: .enabled, style: .primary, action: {
             print("Primary Button Tapped")
-        }, state: .enabled, style: .primary)
+        })
         
-        DSButton(title: "Secondary", action: {
+        DSButton(title: "Secondary", state: .disabled, style: .secondary, action: {
             print("Secondary Button Tapped")
-        }, state: .disabled, style: .secondary)
+        })
         
-        DSButton(title: "Alternative", action: {
+        DSButton(title: "Alternative", state: .disabled, style: .alternative, action: {
             print("Alternative Button Tapped")
-        }, state: .disabled, style: .alternative)
+        })
     }
     .padding()
     .previewLayout(.sizeThatFits)
