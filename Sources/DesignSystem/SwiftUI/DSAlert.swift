@@ -1,10 +1,3 @@
-//
-//  File.swift
-//
-//
-//  Created by JLSANCHEZP on 11/8/24.
-//
-
 import SwiftUI
 
 /// A custom view that displays an alert with a message, icon, and customizable style.
@@ -104,8 +97,7 @@ public struct DSAlert: View {
     }
 }
 
-struct DSAlertView_Previews: PreviewProvider {
-    static var previews: some View {
+#Preview {
         DSAlert(
             message: "Success Message",
             style: .error,
@@ -121,5 +113,5 @@ struct DSAlertView_Previews: PreviewProvider {
             )
         )
         .previewLayout(.sizeThatFits)
-    }
 }
+

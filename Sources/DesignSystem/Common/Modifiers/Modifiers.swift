@@ -1,10 +1,3 @@
-//
-//  File.swift
-//
-//
-//  Created by JLSANCHEZP on 11/8/24.
-//
-
 import SwiftUI
 
 struct PTextModifier: ViewModifier {
@@ -16,8 +9,8 @@ struct PTextModifier: ViewModifier {
                 .lineSpacing(4)
         } else {
             content
-                .font(.custom("Roboto-Regular", size: 16)) // Usa la fuente con el peso ya definido
-                .padding(.vertical, 2) // Añadir padding vertical para simular el line-height
+                .font(.custom("Roboto-Regular", size: 16)) 
+                .padding(.vertical, 2)
         }
     }
 }

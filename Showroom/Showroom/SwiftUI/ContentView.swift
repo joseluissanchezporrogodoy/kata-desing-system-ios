@@ -1,13 +1,6 @@
-//
-//  ContentView.swift
-//  Showroom-SwiftUI
-//
-//  Created by JLSANCHEZP on 11/8/24.
-//
-
 import SwiftUI
 import DesignSystem
-// Usage example
+
 struct ContentView: View {
     @State private var showAlert = false
     

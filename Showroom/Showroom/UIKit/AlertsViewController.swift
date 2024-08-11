@@ -10,21 +10,17 @@ class AlertsViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         
-        // Configurar actionButton
         actionButton.setTitle("Show Alert", for: .normal)
         actionButton.translatesAutoresizingMaskIntoConstraints = false
         actionButton.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
         
-        // Configurar actionButton1
         actionButton1.setTitle("Show Alert1", for: .normal)
         actionButton1.translatesAutoresizingMaskIntoConstraints = false
         actionButton1.addTarget(self, action: #selector(button1Pressed), for: .touchUpInside)
         
-        // Añadir botones a la vista
         view.addSubview(actionButton)
         view.addSubview(actionButton1)
         
-        // Configurar restricciones para centrar los botones y colocar actionButton1 debajo de actionButton
         NSLayoutConstraint.activate([
             actionButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             actionButton.centerYAnchor.constraint(equalTo: view.centerYAnchor),

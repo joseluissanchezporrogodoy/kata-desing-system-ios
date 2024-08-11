@@ -1,16 +1,8 @@
-//
-//  UIDSAlertReuseSwifUIClass.swift
-//  
-//
-//  Created by JLSANCHEZP on 11/8/24.
-//
-
 import SwiftUI
 import UIKit
 
 public class UIDSAlertReuseSwifUIClass: UIView {
     
-    // Propiedades configurables para la alerta
     var message: String
     var style: AlertStyle
     var showIcon: Bool
@@ -34,7 +26,6 @@ public class UIDSAlertReuseSwifUIClass: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // Configuración del HostingController
     private func setupHostingController() {
         let alertView = DSAlert(
             message: message,
@@ -46,10 +37,8 @@ public class UIDSAlertReuseSwifUIClass: UIView {
         let hostingController = UIHostingController(rootView: alertView)
         self.hostingController = hostingController
         
-        // Añadir la vista del hosting controller a la vista principal
         addSubview(hostingController.view)
         
-        // Configurar las restricciones para que la vista ocupe todo el espacio
         hostingController.view.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             hostingController.view.topAnchor.constraint(equalTo: self.topAnchor),
@@ -62,7 +51,7 @@ public class UIDSAlertReuseSwifUIClass: UIView {
 
 public extension UIDSAlertReuseSwifUIClass {
     static func show(title: String, style: AlertStyle, alertInfo: ODSAlertInformation, controller: UIViewController) {
-        // Crear una instancia de UIDSAlert
+      
         let dsAlertView = UIDSAlertReuseSwifUIClass(
             frame: CGRect(x: 20, y: 100, width: controller.view.frame.width - 40, height: 48),
                     message: "This is an alert!",
@@ -73,7 +62,7 @@ public extension UIDSAlertReuseSwifUIClass {
         controller.view.addSubview(dsAlertView)
         
         dsAlertView.translatesAutoresizingMaskIntoConstraints = false
-        // Add constraints
+      
         NSLayoutConstraint.activate([
             dsAlertView.centerXAnchor.constraint(equalTo: controller.view.centerXAnchor),
             dsAlertView.leadingAnchor.constraint(equalTo: controller.view.leadingAnchor, constant: 16),

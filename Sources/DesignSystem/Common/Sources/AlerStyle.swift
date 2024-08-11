@@ -1,10 +1,3 @@
-//
-//  File.swift
-//  
-//
-//  Created by JLSANCHEZP on 11/8/24.
-//
-
 import SwiftUI
 /// An enumeration that defines different styles of alerts.
 ///

@@ -14,7 +14,7 @@ public class UIDSAlert: UIView {
     
     private static var hideAlertTask: DispatchWorkItem?
     
-    // MARK: - Inicialización
+    // MARK: - Inicialization
     public init(title: String, style: AlertStyle, showIcon: Bool, alertInfo: ODSAlertInformation) {
         self.title = title
         self.style = style
@@ -29,7 +29,7 @@ public class UIDSAlert: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: - Configuración de la Vista
+    // MARK: - View Config
     private func setupView() {
         backgroundColor = style.backgroundColorUK
         
@@ -46,7 +46,6 @@ public class UIDSAlert: UIView {
             ])
         }
         
-        // Configuración del botón de cerrar
         dismissButton.setImage(UIImage(named: "Cross", in: .module, with: nil), for: .normal)
         addSubview(dismissButton)
         dismissButton.translatesAutoresizingMaskIntoConstraints = false
@@ -57,14 +56,13 @@ public class UIDSAlert: UIView {
             dismissButton.heightAnchor.constraint(equalToConstant: 24)
         ])
         
-        // Configuración del mensaje
         messageLabel.text = style.title + title
         messageLabel.textColor = style.textColorUK
         messageLabel.numberOfLines = 0
         addSubview(messageLabel)
         messageLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        // Adjust depend icon
+        
         let messageLabelLeadingAnchor = showIcon ?
         messageLabel.leadingAnchor.constraint(equalTo: iconImageView.trailingAnchor, constant: 24) :
         messageLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12)
@@ -100,13 +98,13 @@ public class UIDSAlert: UIView {
     
     @objc private func handleDismiss() {
         alertInfo.dismissAction?()
-        removeFromSuperview()  // Para quitar la alerta de la vista
+        removeFromSuperview()
     }
 }
 
 public extension UIDSAlert {
     static func show(title: String, style: AlertStyle, alertInfo: ODSAlertInformation, controller: UIViewController) {
-        // Crear una instancia de UIDSAlert
+    
         let alert = UIDSAlert(
             title: "This is an alert!",
             style: .error,
@@ -116,16 +114,14 @@ public extension UIDSAlert {
         
         controller.view.addSubview(alert)
         
-        // Configuración de la posición y tamaño de la alerta
         alert.translatesAutoresizingMaskIntoConstraints = false
         
-        // Agregar constraints para centrar la alerta en la vista
         NSLayoutConstraint.activate([
             alert.centerXAnchor.constraint(equalTo: controller.view.centerXAnchor),
             alert.leadingAnchor.constraint(equalTo: controller.view.leadingAnchor, constant: 16),
             alert.trailingAnchor.constraint(equalTo: controller.view.trailingAnchor, constant: -16),
             alert.heightAnchor.constraint(greaterThanOrEqualToConstant: 48),
-            alert.bottomAnchor.constraint(equalTo: controller.view.safeAreaLayoutGuide.bottomAnchor, constant: -20) // Aquí está la corrección
+            alert.bottomAnchor.constraint(equalTo: controller.view.safeAreaLayoutGuide.bottomAnchor, constant: -20)
         ])
     }
 }
