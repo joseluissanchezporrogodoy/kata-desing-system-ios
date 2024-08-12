@@ -19,6 +19,18 @@ public class UIDSAlert: UIView {
         self.alertInfo = alertInfo
         super.init(frame: frame)
         
+        
+        let wrappedDismissAction: (() -> Void)? = { [weak self] in
+            alertInfo.dismissAction?()  // Ejecuta la acción original, si existe
+            self?.removeFromSuperview()  // Elimina la vista de la supervista
+        }
+        
+        self.alertInfo = ODSAlertInformation(
+            first: alertInfo.first,
+            second: alertInfo.second,
+            dismissAction: wrappedDismissAction
+        )
+        
         setupHostingController()
     }
     
@@ -51,18 +63,18 @@ public class UIDSAlert: UIView {
 
 public extension UIDSAlert {
     static func show(title: String, style: AlertStyle, alertInfo: ODSAlertInformation, controller: UIViewController) {
-      
+        
         let dsAlertView = UIDSAlert(
             frame: CGRect(x: 20, y: 100, width: controller.view.frame.width - 40, height: 48),
-                    message: "This is an alert!",
-                    style: .error,
-                    showIcon: true,
-                    alertInfo: alertInfo)
+            message: title,
+            style: style,
+            showIcon: true,
+            alertInfo: alertInfo)
         
         controller.view.addSubview(dsAlertView)
         
         dsAlertView.translatesAutoresizingMaskIntoConstraints = false
-      
+        
         NSLayoutConstraint.activate([
             dsAlertView.centerXAnchor.constraint(equalTo: controller.view.centerXAnchor),
             dsAlertView.leadingAnchor.constraint(equalTo: controller.view.leadingAnchor, constant: 16),
