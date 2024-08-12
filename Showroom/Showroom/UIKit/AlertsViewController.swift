@@ -61,7 +61,7 @@ class AlertsViewController: UIViewController {
                 print("Dismiss action triggered")
             }
         )
-        self.showAlertshow(title: "Hola Mundo", style: .error, alertInfo: alertInfo)
+        self.showAlert(title: "Hola Mundo", style: .error, alertInfo: alertInfo)
     }
 
     @objc private func button1Pressed() {

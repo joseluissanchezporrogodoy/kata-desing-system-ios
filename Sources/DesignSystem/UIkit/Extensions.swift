@@ -15,17 +15,17 @@ import UIKit
      @param message  Text to show
      @param image  Optional. Url of image to showw
      */
-    @nonobjc func showAlertshow(title: String, style: AlertStyle, alertInfo: ODSAlertInformation) {
+    @nonobjc func showAlert(title: String, style: AlertStyle, alertInfo: ODSAlertInformation) {
         DispatchQueue.main.async {
             guard let topController =  UIViewController.currentTopController() else { return }
-            UIDSAlert.show(title: title, style: style, alertInfo: alertInfo, controller: topController)
+            UIDSAlertUK.show(title: title, style: style, alertInfo: alertInfo, controller: topController)
         }
     }
     
     @nonobjc func showRecicledAlertshow(title: String, style: AlertStyle, alertInfo: ODSAlertInformation) {
         DispatchQueue.main.async {
             guard let topController =  UIViewController.currentTopController() else { return }
-            UIDSAlertReuseSwifUIClass.show(title: title, style: style, alertInfo: alertInfo, controller: topController)
+            UIDSAlert.show(title: title, style: style, alertInfo: alertInfo, controller: topController)
         }
     }
     

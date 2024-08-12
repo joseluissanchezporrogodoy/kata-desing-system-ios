@@ -1,5 +1,30 @@
 import SwiftUI
-
+/// A custom button view with configurable title, state, style, and action.
+///
+/// The `DSButton` struct is a SwiftUI view that presents a button with a title, customizable
+/// state (enabled or disabled), and style (primary, secondary, or alternative). The button
+/// can perform an action when tapped, provided it is in the enabled state.
+///
+/// - Parameters:
+///   - title: The text to be displayed on the button.
+///   - state: The state of the button, determining whether it is interactive (`enabled`) or not (`disabled`).
+///   - style: The visual style of the button, which defines the background color, border color, and text color.
+///   - action: A closure to be executed when the button is tapped, if the button is enabled.
+///
+/// - Returns: A view that displays a button with the specified properties and behavior.
+///
+/// - Example:
+/// ```swift
+/// DSButton(
+///     title: "Submit",
+///     state: .enabled,
+///     style: .primary,
+///     action: {
+///         print("Button tapped")
+///     }
+/// )
+/// ```
+/// This example demonstrates how to create a `DSButton` with a title "Submit", in an enabled state, using the primary style, and printing a message when the button is tapped.
 public struct DSButton: View {
     
     let title: String

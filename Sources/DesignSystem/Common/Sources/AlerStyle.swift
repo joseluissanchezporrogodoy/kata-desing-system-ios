@@ -31,11 +31,11 @@ public enum AlertStyle {
     var backgroundColor: Color {
         switch self {
         case .error:
-             Color("Error", bundle: .module)
+            Color("Error", bundle: .module)
         case .success:
-             Color("Success", bundle: .module)
+            Color("Success", bundle: .module)
         case .info:
-             Color("Notification", bundle: .module)
+            Color("Notification", bundle: .module)
         }
     }
     
@@ -64,33 +64,36 @@ public enum AlertStyle {
     var textColor: Color {
         switch self {
         case .error:
-             Color("ErrorText", bundle: .module)
+            Color("ErrorText", bundle: .module)
         case .success:
-             Color("SuccessText", bundle: .module)
+            Color("SuccessText", bundle: .module)
         case .info:
-             Color("NotificationText", bundle: .module)
+            Color("NotificationText", bundle: .module)
         }
     }
+}
+
+extension AlertStyle {
     var backgroundColorUK: UIColor {
-            switch self {
-            case .error:
-                return UIColor(named: "Error", in: .module, compatibleWith: nil) ?? .red
-            case .success:
-                return UIColor(named: "Success", in: .module, compatibleWith: nil) ?? .green
-            case .info:
-                return UIColor(named: "Notification", in: .module, compatibleWith: nil) ?? .blue
-            }
+        switch self {
+        case .error:
+            return UIColor(named: "Error", in: .module, compatibleWith: nil) ?? .red
+        case .success:
+            return UIColor(named: "Success", in: .module, compatibleWith: nil) ?? .green
+        case .info:
+            return UIColor(named: "Notification", in: .module, compatibleWith: nil) ?? .blue
+        }
     }
     
     var textColorUK: UIColor {
-            switch self {
-            case .error:
-                return UIColor(named: "ErrorText", in: .module, compatibleWith: nil) ?? .white
-            case .success:
-                return UIColor(named: "SuccessText", in: .module, compatibleWith: nil) ?? .white
-            case .info:
-                return UIColor(named: "NotificationText", in: .module, compatibleWith: nil) ?? .white
-            }
+        switch self {
+        case .error:
+            return UIColor(named: "ErrorText", in: .module, compatibleWith: nil) ?? .white
+        case .success:
+            return UIColor(named: "SuccessText", in: .module, compatibleWith: nil) ?? .white
+        case .info:
+            return UIColor(named: "NotificationText", in: .module, compatibleWith: nil) ?? .white
+        }
     }
 }
 extension AlertStyle {

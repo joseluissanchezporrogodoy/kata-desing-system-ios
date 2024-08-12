@@ -37,19 +37,127 @@ To install and run this project on your local machine, follow these steps:
 #### UIDSButton
 This customizable button uses UIKit and is a key part of the design system.
 
+Here’s an example of how to use `UIDSButton` within a `UIViewController`:
+
 ```swift
-let button = UIDSButton()
-button.setTitle("Press Me", for: .normal)
-button.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
+class AlertsViewController: UIViewController {
+
+    private var actionButton: UIDSButton!
+    private var actionButton1: UIDSButton!
+
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        
+        setupButtons() // Call the method to set up the buttons
+    }
+
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        
+        setupButtons() // Call the method to set up the buttons
+    }
+
+    private func setupButtons() {
+        actionButton = UIDSButton(frame: .zero, message: "Show Alert", style: .primary) { [weak self] in
+            self?.buttonPressed()
+        }
+        
+        actionButton1 = UIDSButton(frame: .zero, message: "Show Alert1", style: .alternative) { [weak self] in
+            self?.button1Pressed()
+        }
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = .white
+
+        actionButton.translatesAutoresizingMaskIntoConstraints = false
+        actionButton1.translatesAutoresizingMaskIntoConstraints = false
+        
+        view.addSubview(actionButton)
+        view.addSubview(actionButton1)
+        
+        NSLayoutConstraint.activate([
+            actionButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            actionButton.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            
+            actionButton1.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            actionButton1.topAnchor.constraint(equalTo: actionButton.bottomAnchor, constant: 20)
+        ])
+    }
+
+    @objc private func buttonPressed() {
+        print("Button was pressed!")
+        
+        let alertInfo = ODSAlertInformation(
+            first: ActionInformation(action: {
+                print("Tap action triggered")
+            }),
+            second: ActionInformation(action: {
+                print("Long press action triggered")
+            }),
+            dismissAction: {
+                print("Dismiss action triggered")
+            }
+        )
+        self.showAlert(title: "Hola Mundo", style: .error, alertInfo: alertInfo)
+    }
+}
 ```
 
+This example shows how to set up and use `UIDSButton` within a `UIViewController` and how to handle button presses.
+
 #### UIDSAlert
-A reusable alert view that can be used anywhere in the app.
+A reusable alert view that integrates SwiftUI into UIKit, allowing you to display a SwiftUI-based alert in UIKit applications.
+
+Here’s how to display an alert using `UIDSAlert`:
 
 ```swift
-let alert = UIDSAlert(title: "Warning", message: "This is a custom alert.")
-alert.addAction(title: "OK", style: .default, handler: nil)
-present(alert, animated: true, completion: nil)
+public extension UIDSAlert {
+    static func show(title: String, style: AlertStyle, alertInfo: ODSAlertInformation, controller: UIViewController) {
+      
+        let dsAlertView = UIDSAlert(
+            frame: CGRect(x: 20, y: 100, width: controller.view.frame.width - 40, height: 48),
+            message: "This is an alert!",
+            style: .error,
+            showIcon: true,
+            alertInfo: alertInfo
+        )
+        
+        controller.view.addSubview(dsAlertView)
+        
+        dsAlertView.translatesAutoresizingMaskIntoConstraints = false
+      
+        NSLayoutConstraint.activate([
+            dsAlertView.centerXAnchor.constraint(equalTo: controller.view.centerXAnchor),
+            dsAlertView.leadingAnchor.constraint(equalTo: controller.view.leadingAnchor, constant: 16),
+            dsAlertView.trailingAnchor.constraint(equalTo: controller.view.trailingAnchor, constant: -16),
+            dsAlertView.heightAnchor.constraint(greaterThanOrEqualToConstant: 48),
+            dsAlertView.bottomAnchor.constraint(equalTo: controller.view.safeAreaLayoutGuide.bottomAnchor, constant: 26)
+        ])
+    }
+}
+```
+
+To present the alert within a view controller:
+
+```swift
+@objc private func buttonPressed() {
+    print("Button was pressed!")
+    
+    let alertInfo = ODSAlertInformation(
+        first: ActionInformation(action: {
+            print("Tap action triggered")
+        }),
+        second: ActionInformation(action: {
+            print("Long press action triggered")
+        }),
+        dismissAction: {
+            print("Dismiss action triggered")
+        }
+    )
+    self.showAlert(title: "Hola Mundo", style: .error, alertInfo: alertInfo)
+}
 ```
 
 ### SwiftUI Components
@@ -58,19 +166,32 @@ present(alert, animated: true, completion: nil)
 This button component is implemented in SwiftUI.
 
 ```swift
-DSButton(action: {
+DSButton(title: "Press Me", action: {
     print("Button pressed")
-}) {
-    Text("Press Me")
-}
+})
 ```
 
 #### DSAlert
-A reusable alert component in SwiftUI that can be easily integrated.
+A reusable alert component in SwiftUI that can be easily integrated using a view modifier.
+
+To display a `DSAlert` in your SwiftUI view, you can use the `showDSAlert` modifier. Here's an example:
 
 ```swift
-DSAlert(isPresented: $showAlert, title: "Alert", message: "This is a SwiftUI alert.")
+struct ContentView: View {
+    @State private var showAlert = false
+
+    var body: some View {
+        VStack {
+            DSButton(title: "Show Alert", action: {
+                showAlert = true
+            })
+        }
+        .showDSAlert(showAlert: $showAlert, alertView: DSAlert(title: "Alert", message: "This is a SwiftUI alert."))
+    }
+}
 ```
+
+This example demonstrates how to use `DSAlert` in a SwiftUI view. The `DSAlert` is presented when the `showAlert` state is set to `true`, and it can be customized to include various actions and styles.
 
 ## Project Architecture
 
