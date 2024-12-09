@@ -1,5 +1,5 @@
 
-# Kata Design System iOS
+# Design System iOS
 
 This project is a modular design system for iOS, developed with Swift. The system includes reusable components in UIKit and SwiftUI, facilitating the creation of consistent and efficient interfaces.
 
